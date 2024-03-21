@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="bluethinkinc_productenquiry_bluethink_enquiry" resource="default" engine="innodb" comment="bluethinkinc_productenquiry_bluethink_enquiry Table">
+		<column xsi:type="int" name="bluethink_enquiry_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="bluethink_enquiry_id"/>
+		</constraint>
+		<column name="product_sku" nullable="true" xsi:type="varchar" comment="product_sku" length="255"/>
+		<column name="product_name" nullable="true" xsi:type="varchar" comment="product_name" length="255"/>
+		<column name="first_name" nullable="true" xsi:type="varchar" comment="first_name" length="255"/>
+		<column name="last_name" nullable="true" xsi:type="varchar" comment="last_name" length="255"/>
+		<column name="email" nullable="true" xsi:type="varchar" comment="email" length="255"/>
+		<column name="subject" nullable="false" xsi:type="text" comment="subject"/>
+		<column name="message" nullable="true" xsi:type="text" comment="message"/>
+		<column name="created_at" nullable="true" xsi:type="timestamp" comment="created_at"/>
+	</table>
+</schema>

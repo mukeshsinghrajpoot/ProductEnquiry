@@ -1,0 +1,38 @@
+<?php
+$viewModel = $block->getData('viewModel');
+$getEnable = $viewModel->getEnable();
+$getpdpEnable = $viewModel->getpdpEnable();
+$getButtontitle = $viewModel->getPdpbuttontitle();
+$gettitle = $viewModel->getPdppopupbuttontitle();
+$product = $block->getProduct();
+$pname=$product->getName();
+$sku=$product->getSku();
+$ProductEnquiry=$product_enquiry=$product->getProductEnquiry();
+if ($getEnable && $getpdpEnable && $ProductEnquiry):
+    ?>
+<div>
+    <a href="javascript:void(0);"  class="enquiry-product pdpbutton" id="enquiry-product" 
+    data-title="<?= /* @noEscape */ $gettitle; ?>">
+    <?= /* @noEscape */ $getButtontitle; ?></a>
+</div>
+<div id="popup-modal" style="display:none;">
+    <div id='responcedata'></div>
+    <div class="formdata" id='formdata'>   
+    <input type="hidden" value="<?= /* @noEscape */ $pname; ?>" name='pname' id='pname'>
+    <input type="hidden" value="<?= /* @noEscape */ $sku; ?>" name='sku' id='sku'>
+    <input type="text" value="" name='fname' id='fname' placeholder="First Name">
+    <input type="text" value="" name='lname' id='lname' placeholder="Last Name">
+    <input type="text" value="" name='subject' id='subject' placeholder="Subject">
+    <input type="email" value="" name='email' id='email' placeholder="Email">
+    <textarea placeholder="Message" id="message"></textarea>
+    <span class="Submit_Enquiry_btn" id="submit_enquire">
+    <?= /* @noEscape */ $getButtontitle; ?>
+    </span>
+    </div>
+</div>
+<?php endif; ?>
+<script type="text/x-magento-init">
+{
+ "*":{"Bluethinkinc_ProductEnquiry/js/productenquiry": {}}
+}
+</script>

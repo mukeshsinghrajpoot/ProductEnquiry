@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Bluethinkincenquiry::top_level" title="Product Enquiry" module="Bluethinkinc_ProductEnquiry" sortOrder="9999" resource="Bluethinkinc_ProductEnquiry::bluethink_enquiry"/>
+		<add id="Bluethinkinc_ProductEnquiry::bluethinkinc_productenquiry_bluethink_enquiry" title="Bluethink Product Enquiry" module="Bluethinkinc_ProductEnquiry" sortOrder="9999" resource="Bluethinkinc_ProductEnquiry::bluethink_enquiry" parent="Bluethinkincenquiry::top_level" action="bluethinkinc_productenquiry/bluethinkenquiry/index"/>
+	</menu>
+</config>

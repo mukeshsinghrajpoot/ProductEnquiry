@@ -1,0 +1,30 @@
+<!--@vars {
+"var store.frontend_name":"Store Frontend Name",
+"var customer_name":"Customer Name", 
+"var customer_email":"Cusetomer Email",
+"var product_name" :"Product Name",
+"var product_sku":"Product Sku",
+"var first_name":"First Name",
+"var last_name":"Last Name",
+"var product_subject":"Product Subject",
+"var enquiry_email":"Product Email",
+"var message":"Product Message"
+} @-->
+<!--@subject {{var product_subject}} @-->
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p>{{trans "Hi,"}} {{var customer_name}}</p>
+            <p>{{trans "You've got mail for product enquiry.."}} </p>
+            <p>{{trans "Product Name:"}} {{var product_name}}</p>
+            <p>{{trans "Product Sku:"}} {{var product_sku}}</p>
+            <p>{{trans "First Name:"}} {{var first_name}}</p>
+            <p>{{trans "Last Name:"}} {{var last_name}}</p>
+            <p>{{trans "Email:"}} {{var enquiry_email}}</p>
+            <p>{{trans "Message:"}} {{var message}}</p>
+        </td>
+    </tr>    
+</table>
+{{template config_path="design/email/footer_template"}}

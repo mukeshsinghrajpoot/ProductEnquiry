@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="product_enquiry_email_configuration_email_template" label="Send Product Enquiry" file="send_product_enquiry_email.html" type="html" module="Bluethinkinc_ProductEnquiry" area="frontend"/>
+</config>

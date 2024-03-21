@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <product_enquiry>
+            <general> 
+                <enquiry_message>Thank you for your enquiry.</enquiry_message>
+                <enquiry_reload_time>1000</enquiry_reload_time>
+                <enquiry_button_title>Enquiry Product</enquiry_button_title>
+                <pop_form_button_title>Product Enquiry</pop_form_button_title>             
+            </general>
+            <email_configuration>
+                <send_to_email_name>Admin</send_to_email_name>
+                <email_template>product_enquiry_email_configuration_email_template</email_template>
+            </email_configuration>
+        </product_enquiry>
+    </default>
+</config>

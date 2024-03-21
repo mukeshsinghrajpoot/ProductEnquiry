@@ -1,0 +1,181 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">bluethinkinc_productenquiry_bluethink_enquiry_listing.bluethinkinc_productenquiry_bluethink_enquiry_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>bluethinkinc_productenquiry_bluethink_enquiry_columns</spinner>
+		<deps>
+			<dep>bluethinkinc_productenquiry_bluethink_enquiry_listing.bluethinkinc_productenquiry_bluethink_enquiry_listing_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="bluethinkinc_productenquiry_bluethink_enquiry_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">bluethink_enquiry_id</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>Bluethinkinc_ProductEnquiry::bluethink_enquiry</aclResource>
+		<dataProvider name="bluethinkinc_productenquiry_bluethink_enquiry_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>bluethink_enquiry_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+		<massaction name="listing_massaction">
+		    <action name="delete">
+		        <argument name="data" xsi:type="array">
+		            <item name="config" xsi:type="array">
+		                <item name="type" xsi:type="string">delete</item>
+		                <item name="label" xsi:type="string" translate="true">Delete</item>
+		                <item name="url" xsi:type="url" path="bluethinkinc_productenquiry/bluethinkenquiry/massDelete"/>
+		                <item name="confirm" xsi:type="array">
+		                    <item name="title" xsi:type="string" translate="true">Delete Product Enquiry</item>
+		                    <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected Product Enquiry?</item>
+		                </item>
+		            </item>
+		        </argument>
+		    </action>
+		</massaction>
+	</listingToolbar>
+	<columns name="bluethinkinc_productenquiry_bluethink_enquiry_columns">
+		<settings>
+			<childDefaults>
+				<param name="fieldAction" xsi:type="array">
+					<item name="provider" xsi:type="string">bluethinkinc_productenquiry_bluethink_enquiry_listing.bluethinkinc_productenquiry_bluethink_enquiry_listing.bluethinkinc_productenquiry_bluethink_enquiry_columns_editor</item>
+					<item name="target" xsi:type="string">startEdit</item>
+					<item name="params" xsi:type="array">
+						<item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+						<item name="1" xsi:type="boolean">true</item>
+					</item>
+				</param>
+			</childDefaults>
+		</settings>
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>bluethink_enquiry_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="bluethink_enquiry_id" sortOrder="10">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="product_sku" sortOrder="20">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Product Sku</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="product_name" sortOrder="30">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Product Name</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="first_name" sortOrder="40">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">First Name</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="last_name" sortOrder="50">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Last Name</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="email" sortOrder="60">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Email</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="subject" sortOrder="70">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Subject</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="message" sortOrder="80">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Message</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="created_at" sortOrder="90">
+			<settings>
+				<label translate="true">created_at</label>
+				<editor>
+					<editorType>date</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<actionsColumn name="actions" class="Bluethinkinc\ProductEnquiry\Ui\Component\Listing\Column\BluethinkenquiryActions" sortOrder="100">
+			<settings>
+				<indexField>bluethink_enquiry_id</indexField>
+				<resizeEnabled>false</resizeEnabled>
+				<resizeDefaultWidth>107</resizeDefaultWidth>
+			</settings>
+		</actionsColumn>
+	</columns>
+</listing>

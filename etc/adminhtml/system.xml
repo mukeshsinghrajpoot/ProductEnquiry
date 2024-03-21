@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bluethink" translate="label" sortOrder="10">
+            <label>BlueThink Inc</label>
+        </tab>
+        <section id="product_enquiry" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Admin Product Enquiry Setting</label>
+            <tab>bluethink</tab>
+            <resource>Bluethinkinc_ProductEnquiry::bluethink_product_enquiry</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Select "yes" to enable module.</comment>
+                </field>
+                <field id="plpenable" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Product List page Enable Enquiry</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Select "yes" to enable module.</comment>
+                    <depends>
+                        <field id="product_enquiry/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="pdpenable" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Product Detail page Enable Enquiry</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Select "yes" to enable module.</comment>
+                    <depends>
+                        <field id="product_enquiry/general/enable">1</field>
+                    </depends>
+                </field>
+                 <field id="enquiry_message" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <validate>required-entry</validate>
+                    <label>Message</label>
+                    <comment>Message Display After form submission</comment>
+                    <depends>
+                        <field id="product_enquiry/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="enquiry_reload_time" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <validate>required-entry</validate>
+                    <label>Enquiry page Reload Time</label>
+                    <comment>Enquiry page Reload Time in Seconds example:1000</comment>
+                    <depends>
+                        <field id="product_enquiry/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="enquiry_button_title" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <validate>required-entry</validate>
+                    <label>Enquiry Button Title</label>
+                    <comment>Product List and Detail page or pop modal Button Title</comment>
+                    <depends>
+                        <field id="product_enquiry/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="pop_form_button_title" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <validate>required-entry</validate>
+                    <label>Form Enquiry Title</label>
+                    <comment>Product List and Detail page Pop up model Title</comment>
+                    <depends>
+                        <field id="product_enquiry/general/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="email_configuration" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Send Enquiry Email To Store Owner Configuration</label>
+                <field id="send_to_email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <validate>required-entry</validate>
+                    <label>Send Email To</label>
+                    <comment>For the multiple use comma between emails.For example:abc@exmple.com,xyz@example.com</comment>
+                </field>
+                <field id="send_to_email_name" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <validate>required-entry</validate>
+                    <label>Receiver Name</label>
+                    <comment>Enter Your Receiver Name.For example:abc</comment>
+                </field>
+                <field id="email_template" translate="label comment" type="select" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Select Email Template</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
